@@ -1,4 +1,5 @@
 # Nakahara-Seminar
 
-They are the programs that used for managing docs and spreadsheets in Nakahara Seminar.
-Most of them are written in Google App Script language(Similar to Java script)
+The programs that used for managing docs and spreadsheets in Nakahara Seminar.
+Programming skill is not well, so if you find any advices or issues, notice me.
+
