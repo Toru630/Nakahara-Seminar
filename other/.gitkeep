@@ -1,0 +1,22 @@
+from bs4 import BeautifulSoup
+import requests
+
+
+
+url = "https://www.wantedly.com/projects?type=mixed&page=1&occupation_types%5B%5D=jp__marketing&hiring_types%5B%5D=internship&hiring_types%5B%5D=newgrad&keywords%5B%5D=22%E5%8D%92"
+
+re = requests.get(url)
+soup = BeautifulSoup(re.text, "lxml")
+
+projects = soup.find_all('article', class_='projects-index-single')
+
+project_list = []
+for project in projects:
+    title = project.find("h1", class_='project-title').a.get_text(strip=True)
+    company = project.find('h3').a.get_text(strip=True)
+    tag = "#"+project.find('div', class_='project-tag small normal').get_text(strip=True)
+    link = project.find('a').get('href')
+    url = 'https://www.wantedly.com' + link.split('?')[0]
+    contents = project.find('p', class_='project-excerpt').get_text(strip=True)
+    project_list.append([title, company, "#"+tag, url, contents])
+    print("【Wantedly紹介】",company, "\n", tag, "\n", title, contents[:30], "...", "\n", url)
