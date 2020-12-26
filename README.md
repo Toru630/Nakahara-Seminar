@@ -1,5 +1,2 @@
-# Nakahara-Seminar
-
-The programs that used for managing docs and spreadsheets in Nakahara Seminar.
-Programming skill is not well, so if you find any issues, notice me.
-
+These codes are written by a university sutudent, not majore in Conmupter science and other relevant field, so some of them are not efficient, but it will work correctly.
+If you find any mistakes, notice me.
